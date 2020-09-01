@@ -1,18 +1,20 @@
-#  First question solution 
+# First question solution 
 
 # what should be tested and how :
 
-- validate that file is opened with no errors
+- validate that file is opened with no errors:
+  - validating that file type is txt
+  - validating that file exists
 
 - validate that each generated file part has less or equal to x lines by getting the total number of lines in the generated file and comparing it to the requested value which in our case is 1000
 
+- check that only one part can get less of x lines
+
 - validate that matcher gets the file part correctly, as a string by checking it's type
 
-- validate that after all matches completed sum of all lines/chars is equal to base file in order to assure nothing was lost from the original
+- validate that after all matches completed sum of all lines is equal to base file in order to assure nothing was lost from the original
 
-- validate that if all matches are completed the aggregator is called
-
-- validate that when aggregator is called all files are combined and printed correctly, we can store the number of the generated files from the first part and compare to the current step, also to validate that eventually data is printed
+- validate that if all matches are completed the aggregator is called from the logs 
 
 - validate that after invoking the main module a map is created it contains a word and it's location in the text, we can check the type of the generated data that it's an instance of a map and make sure that it contains in the key a string and the value contains lineOffset and charOffset
 
@@ -24,9 +26,12 @@
 
 # what should be done manually and what can be covered in automation
 - in my opinion all the cases can be covered in automation i even think it's better with this amount of data because the human eye will definitely miss something 
+- the case that checks if the aggregator is called from the logs can be done manually
 
 # corner cases
 - file is empty - should be handled accordingly 
-- matcher is stuck on one of the file parts
+- if file contains exactly y * x line it will eventually contain y matcher files
 - the string is not found, a proper message should be printed
+- sending empty string in search
+- sending a huge file
 

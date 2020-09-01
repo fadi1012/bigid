@@ -1,4 +1,4 @@
-# bigid Task
+# bigid Task - solved with python3
 
 # steps to run locally:
 - 1) you can run mock_data_generator.py locally but activating bigidvenv is needed:
